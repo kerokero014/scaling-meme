@@ -1,0 +1,19 @@
+
+GET http://localhost:3000/user
+
+
+
+###
+POST http://localhost:3000/user
+Content-Type: application/json
+
+{
+  "username": "JohnDoe",
+  "lastname": "Smith",
+  "email": "johndoe@example.com",
+  "password": "securePassword123"
+}
+
+
+###
+DELETE http://localhost:3000/user/660892165c7b16a89f1b70f4
