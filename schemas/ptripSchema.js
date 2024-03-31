@@ -1,6 +1,7 @@
-//SChema for Planning trips using mongoose
+//Schema for Planning trips using mongoose
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+
 
 const PlanTripSchema = new Schema({
   tripname: {
