@@ -1,1 +1,0 @@
-const PlanTripController = require('../controllers/plantripController');
