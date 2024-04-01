@@ -5,8 +5,8 @@ const doc = {
     title: 'National Park API',
     description: 'National Park Planning API'
   },
-  host: 'localhost:3000',
-  schemes: ['http']
+  host: 'npp-api.onrender.com',
+  schemes: ['https']
 };
 
 const outputFile = './swagger-output.json';
