@@ -5,8 +5,8 @@ const router = express.Router();
 //get single supply
 router.get('/', SupplyController.getSupply);
 
-router.get('/', SupplyController.getSupplies);
-// SINGLE ROUTE FOR GETTING SUPPLIES BY CATEGORY
+router.get('/all', SupplyController.getSupplies);
+
 router.get('/:category', SupplyController.getSuppliesByCategory);
 
 router.post('/', SupplyController.createSupply);
