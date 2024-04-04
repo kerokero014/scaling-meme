@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const supplySchema = new mongoose.Schema({
+const SupplySchema = new mongoose.Schema({
   name: {
     type: String,
     required: true
@@ -29,4 +29,4 @@ const supplySchema = new mongoose.Schema({
   }
 });
 
-module.exports = mongoose.model('Supply', supplySchema);
+module.exports = mongoose.model('Supply', SupplySchema);
