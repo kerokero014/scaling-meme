@@ -1,1 +1,15 @@
+PUT http://localhost:3000/supplies/660f1f66ba8aa50f5b559c4e
+Content-Type: application/json
+
+{
+  "name": "Boots of Gato",
+  "quantity": 1,
+  "description": "Boots used by Gato in all movies(Not stolen)",
+  "price": "15 Emeralds",
+  "category": ["Boots", "magical", "used", "small"]
+}
+
+
+
+###
 GET http://localhost:3000/supplies/

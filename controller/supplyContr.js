@@ -54,8 +54,8 @@ exports.createSupply = async (req, res) => {
 // controller for updating a supply
 exports.updateSupply = async (req, res) => {
   try {
-    const updatedSupply = await Supply.updateOne(
-      { _id: req.params.supplyId },
+    const updatedSupply = await Supply.findByIdAndUpdate(
+      req.params.supplyId,
       {
         $set: {
           name: req.body.name,
@@ -66,7 +66,8 @@ exports.updateSupply = async (req, res) => {
           category: req.body.category,
           website: req.body.website
         }
-      }
+      },
+      { new: true } // This option returns the modified document.
     );
     res.status(200).json(updatedSupply);
   } catch (err) {
