@@ -363,7 +363,7 @@
         }
       }
     },
-    "/suppliessupply/{name}": {
+    "/supplies/supply/{name}": {
       "get": {
         "description": "",
         "parameters": [

@@ -7,7 +7,7 @@ router.get('/:id', SupplyController.getSupply);
 
 router.get('/', SupplyController.getAllSupplies);
 
-router.get('supply/:name', SupplyController.getSuppliesByCategory);
+router.get('/supply/:name', SupplyController.getSuppliesByCategory);
 
 router.post('/', SupplyController.createSupply);
 
