@@ -295,12 +295,12 @@
         }
       }
     },
-    "/supplies/{category}": {
+    "/supplies/{name}": {
       "get": {
         "description": "",
         "parameters": [
           {
-            "name": "category",
+            "name": "name",
             "in": "path",
             "required": true,
             "type": "string"

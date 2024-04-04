@@ -21,16 +21,13 @@ exports.getSupply = async (req, res) => {
   }
 };
 
-// controller for getting supplies by category
-exports.getSuppliesByCategory = async (req, res) => {
-  const { category } = req.params;
-
+// controller for getting supplies by name 
+exports.getSupplyByName = async (req, res) => {
   try {
-    const supplies = await Supply.find({ category: category });
-    res.json({ success: true, data: supplies });
+    const supply = await Supply.find({ name: req.params.name });
+    res.status(200).json(supply);
   } catch (err) {
-    console.error('Error fetching supplies by category:', err);
-    res.status(500).json({ success: false, message: 'Server error' });
+    res.status(500).json({ message: err });
   }
 };
 
