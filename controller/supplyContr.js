@@ -21,6 +21,16 @@ exports.getSupply = async (req, res) => {
   }
 };
 
+// controller for getting supplies by category
+exports.getSuppliesByCategory = async (req, res) => {
+  try {
+    const supplies = await Supply.find({ category: req.params.category });
+    res.status(200).json(supplies);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
 // controller for creating a new supply
 exports.createSupply = async (req, res) => {
   const supply = new Supply({
