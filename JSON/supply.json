@@ -1,8 +1,7 @@
 {
-    "name": "Endless Backpack",
-    "quantity" : 4,
-    "description": "A backpack that never runs out of space.",
-    "price": "4 Emeralds",
-    "category": "Backpacks",
-    "website": "https://www.minecraft.net/en-us/"
+    "name": "Boots used by Puss in Boots Cat",
+    "quantity" : 1,
+    "description": "Boots used by Gato in all movies(Not stolen)",
+    "price": "15 Emeralds",
+    "category": ["Boots", "magical", "used", "small"]
 }  
