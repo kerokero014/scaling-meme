@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 
 //get single supply
-router.get('/', SupplyController.getSupply);
+router.get('/:id', SupplyController.getSupply);
 
 router.get('/all', SupplyController.getSupplies);
 
