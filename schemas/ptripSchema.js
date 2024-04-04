@@ -2,7 +2,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-
 const PlanTripSchema = new Schema({
   tripname: {
     type: String,

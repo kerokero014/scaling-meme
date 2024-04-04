@@ -1,7 +1,6 @@
 const PlanTrip = require('../schemas/ptripSchema');
 const User = require('../schemas/userSchema');
 
-
 //create a new trip
 exports.createTrip = async (req, res) => {
   try {
@@ -82,11 +81,12 @@ exports.deleteTrip = async (req, res) => {
 //get trips by location
 exports.getTripsByLocation = async (req, res) => {
   try {
-    const trips = await PlanTrip.find({ triplocation: req.params.location }).populate('createdBy', 'username');
+    const trips = await PlanTrip.find({ triplocation: req.params.location }).populate(
+      'createdBy',
+      'username'
+    );
     res.json(trips);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
 };
-
-
