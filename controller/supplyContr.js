@@ -24,7 +24,15 @@ exports.getSupply = async (req, res) => {
 // controller for getting supplies by category
 exports.getSuppliesByCategory = async (req, res) => {
   try {
+    if (!req.params.category) {
+      return res.status(400).json({ message: 'No category provided' });
+    }
+
     const supplies = await Supply.find({ category: req.params.category });
+    if (!supplies) {
+      return res.status(404).json({ message: 'No supplies found for this category' });
+    }
+
     res.status(200).json(supplies);
   } catch (err) {
     res.status(500).json({ message: err });
