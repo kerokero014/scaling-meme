@@ -55,7 +55,7 @@ exports.createSupply = async (req, res) => {
 exports.updateSupply = async (req, res) => {
   try {
     const updatedSupply = await Supply.findByIdAndUpdate(
-      req.params.supplyId,
+      req.params.id,
       {
         $set: {
           name: req.body.name,
