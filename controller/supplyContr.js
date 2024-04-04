@@ -21,17 +21,6 @@ exports.getSupply = async (req, res) => {
   }
 };
 
-// controller for getting supplies by name 
-exports.getSupplyByName = async (req, res) => {
-  try {
-    const supply = await Supply.find({ name: req.params.name });
-    res.status(200).json({ success: true, data: supply });
-  } catch (err) {
-    res.status(500).json({ success: false, message: err.message });
-  }
-};
-
-
 // controller for creating a new supply
 exports.createSupply = async (req, res) => {
   const supply = new Supply({

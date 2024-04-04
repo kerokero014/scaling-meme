@@ -7,12 +7,12 @@ router.get('/:id', SupplyController.getSupply);
 
 router.get('/', SupplyController.getAllSupplies);
 
-router.get('/:name', SupplyController.getSupplyByName);
+//router.get('/:name', SupplyController.getSupplyByName);
 
 router.post('/', SupplyController.createSupply);
 
-router.put('/:supplyId', SupplyController.updateSupply);
+router.put('/:id', SupplyController.updateSupply);
 
-router.delete('/:supplyId', SupplyController.deleteSupply);
+router.delete('/:id', SupplyController.deleteSupply);
 
 module.exports = router;
