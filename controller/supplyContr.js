@@ -1,7 +1,7 @@
 const Supply = require('../schemas/supplySchema');
 
 // controller for getting all supplies
-exports.getSupplies = async (req, res) => {
+exports.getAllSupplies = async (req, res) => {
   try {
     const supplies = await Supply.find();
     res.status(200).json(supplies);

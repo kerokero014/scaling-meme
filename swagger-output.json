@@ -218,7 +218,7 @@
         }
       }
     },
-    "/supply/{id}": {
+    "/supplies/{id}": {
       "get": {
         "description": "",
         "parameters": [
@@ -239,7 +239,7 @@
         }
       }
     },
-    "/supply/all": {
+    "/supplies/all": {
       "get": {
         "description": "",
         "responses": {
@@ -252,7 +252,7 @@
         }
       }
     },
-    "/supply/{category}": {
+    "/supplies/{category}": {
       "get": {
         "description": "",
         "parameters": [
@@ -273,7 +273,7 @@
         }
       }
     },
-    "/supply/": {
+    "/supplies/": {
       "post": {
         "description": "",
         "parameters": [
@@ -318,7 +318,7 @@
         }
       }
     },
-    "/supply/{supplyId}": {
+    "/supplies/{supplyId}": {
       "put": {
         "description": "",
         "parameters": [

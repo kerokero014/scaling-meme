@@ -5,7 +5,7 @@ const router = express.Router();
 //get single supply
 router.get('/:id', SupplyController.getSupply);
 
-router.get('/all', SupplyController.getSupplies);
+router.get('/all', SupplyController.getAllSupplies);
 
 router.get('/:category', SupplyController.getSuppliesByCategory);
 
