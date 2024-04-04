@@ -4,9 +4,10 @@ const Supply = require('../schemas/supplySchema');
 exports.getAllSupplies = async (req, res) => {
   try {
     const supplies = await Supply.find();
-    res.status(200).json(supplies);
+    res.json({ success: true, data: supplies });
   } catch (err) {
-    res.status(500).json({ message: err });
+    console.error('Error fetching supplies:', err);
+    res.status(500).json({ success: false, message: 'Server error' });
   }
 };
 
