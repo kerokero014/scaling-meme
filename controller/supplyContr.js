@@ -12,6 +12,7 @@ exports.getSupplies = async (req, res) => {
 
 // controller for getting a supply by id
 exports.getSupply = async (req, res) => {
+  console.log(req.params.supplyId); // Add this line
   try {
     const supply = await Supply.findById(req.params.supplyId);
     res.status(200).json(supply);

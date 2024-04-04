@@ -21,7 +21,6 @@ exports.createTrip = async (req, res) => {
   }
 };
 
-
 //get all trips
 exports.getTrips = async (req, res) => {
   try {
@@ -31,8 +30,6 @@ exports.getTrips = async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 };
-
-
 
 //get a single trip
 exports.getTrip = async (req, res) => {
@@ -44,7 +41,6 @@ exports.getTrip = async (req, res) => {
   }
 };
 
-
 //get trips created by a user
 exports.getMyTrips = async (req, res) => {
   try {
@@ -54,7 +50,6 @@ exports.getMyTrips = async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 };
-
 
 //update a trip by user who created it
 exports.updateTrip = async (req, res) => {
