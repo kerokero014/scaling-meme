@@ -1,3 +1,6 @@
+POST http://localhost:3000/plantrip
+Content-Type: application/json
+
 {
   "tripName": "Grand Teton National Park",
   "tripDate": "2024-07-01",

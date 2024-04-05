@@ -1,37 +1,24 @@
 const PlanTrip = require('../schemas/ptripSchema');
 const User = require('../schemas/userSchema');
 
+//create a trip
 exports.createTrip = async (req, res) => {
   try {
-    const { tripName, tripDate, tripLocation, tripDescription } = req.body;
-    if (!tripName || !tripDate || !tripLocation || !tripDescription) {
-      return res.status(400).json({ message: "All fields are required." });
-    }
-
-    // Create new trip object
+    const { tripName, tripDate, tripLocation, createdBy, tripDescription, tripImage } = req.body;
     const newTrip = new PlanTrip({
-      tripName: tripName,
-      tripDate: new Date(tripDate), // Convert string to Date object
-      tripLocation: tripLocation,
-      createdBy: req.user.id,
-      tripDescription: tripDescription,
-      tripImage: req.file ? req.file.path : null // Handle file upload
+      tripName,
+      tripDate,
+      tripLocation,
+      createdBy,
+      tripDescription,
+      tripImage
     });
-
-    // Save trip to database
-    const trip = await newTrip.save();
-
-    res.status(201).json(trip);
-  } catch (err) {
-    // Handle errors
-    console.error("Error creating trip:", err);
-    if (err.name === 'ValidationError') {
-      return res.status(400).json({ message: err.message });
-    }
-    res.status(500).json({ message: "Internal server error." });
+    const savedTrip = await newTrip.save();
+    res.status(201).json(savedTrip);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
   }
 };
-
 
 //get all trips
 exports.getTrips = async (req, res) => {

@@ -136,7 +136,13 @@
                 "tripLocation": {
                   "example": "any"
                 },
+                "createdBy": {
+                  "example": "any"
+                },
                 "tripDescription": {
+                  "example": "any"
+                },
+                "tripImage": {
                   "example": "any"
                 }
               }
@@ -149,9 +155,6 @@
           },
           "400": {
             "description": "Bad Request"
-          },
-          "500": {
-            "description": "Internal Server Error"
           }
         }
       }

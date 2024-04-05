@@ -8,7 +8,7 @@ const PlanTripSchema = new Schema({
     required: true
   },
   tripDate: {
-    type: Date,
+    type: String,
     required: true
   },
   tripLocation: {
