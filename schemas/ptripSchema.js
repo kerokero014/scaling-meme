@@ -17,8 +17,7 @@ const PlanTripSchema = new Schema({
   },
   createdBy: {
     type: Schema.Types.ObjectId,
-    ref: 'user',
-    required: true
+    ref: 'user'
   },
   tripdescription: {
     type: String,
