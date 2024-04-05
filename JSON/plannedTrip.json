@@ -1,5 +1,6 @@
 {
-  "tripname": "Grand Teton National Park",
-  "tripdate": "2018-07-01",
-  "tripdescription": "Grand Teton National Park is a United States National Park in northwestern Wyoming. At approximately 310,000 acres, the park includes the major peaks of the 40-mile-long Teton Range as well as most of the northern sections of the valley known as Jackson Hole. Grand Teton National Park is only 10 miles south of Yellowstone National Park, to which it is connected by the National Park Service-managed John D. Rockefeller, Jr."
+  "tripName": "Grand Teton National Park",
+  "tripDate": "2024-07-01",
+  "tripLocation": "Wyoming",
+  "tripDescription": "Grand Teton National Park is a United States National Park in northwestern Wyoming. At approximately 310,000 acres, the park includes the major peaks of the 40-mile-long Teton Range as well as most of the northern sections of the valley known as Jackson Hole. Grand Teton National Park is only 10 miles south of Yellowstone National Park, to which it is connected by the National Park Service-managed John D. Rockefeller, Jr."
 }

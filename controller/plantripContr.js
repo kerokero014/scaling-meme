@@ -3,18 +3,18 @@ const User = require('../schemas/userSchema');
 
 exports.createTrip = async (req, res) => {
   try {
-    const { tripname, tripdate, triplocation, tripdescription } = req.body;
-    if (!tripname || !tripdate || !triplocation || !tripdescription) {
+    const { tripName, tripDate, tripLocation, tripDescription } = req.body;
+    if (!tripName || !tripDate || !tripLocation || !tripDescription) {
       return res.status(400).json({ message: "All fields are required." });
     }
 
     // Create new trip object
     const newTrip = new PlanTrip({
-      tripName: tripname,
-      tripDate: new Date(tripdate), // Convert string to Date object
-      tripLocation: triplocation,
+      tripName: tripName,
+      tripDate: new Date(tripDate), // Convert string to Date object
+      tripLocation: tripLocation,
       createdBy: req.user.id,
-      tripDescription: tripdescription,
+      tripDescription: tripDescription,
       tripImage: req.file ? req.file.path : null // Handle file upload
     });
 

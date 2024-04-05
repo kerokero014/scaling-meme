@@ -127,16 +127,16 @@
             "schema": {
               "type": "object",
               "properties": {
-                "tripname": {
+                "tripName": {
                   "example": "any"
                 },
-                "tripdate": {
+                "tripDate": {
                   "example": "any"
                 },
-                "triplocation": {
+                "tripLocation": {
                   "example": "any"
                 },
-                "tripdescription": {
+                "tripDescription": {
                   "example": "any"
                 }
               }
