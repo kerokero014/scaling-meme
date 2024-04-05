@@ -1,9 +1,6 @@
 const PlanTrip = require('../schemas/ptripSchema');
 const User = require('../schemas/userSchema');
 
-//create a new trip
-const PlanTrip = require('../models/PlanTrip');
-
 exports.createTrip = async (req, res) => {
   try {
     const { tripname, tripdate, triplocation, tripdescription } = req.body;
