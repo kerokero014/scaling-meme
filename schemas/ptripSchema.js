@@ -3,15 +3,15 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const PlanTripSchema = new Schema({
-  tripname: {
+  tripName: {
     type: String,
     required: true
   },
-  tripdate: {
+  tripDate: {
     type: Date,
     required: true
   },
-  triplocation: {
+  tripLocation: {
     type: String,
     required: true
   },
@@ -19,13 +19,12 @@ const PlanTripSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'user'
   },
-  tripdescription: {
+  tripDescription: {
     type: String,
     required: true
   },
-  tripimage: {
-    type: String,
-    required: true
+  tripImage: {
+    type: String
   }
 });
 
