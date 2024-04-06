@@ -1,6 +1,6 @@
 const Supply = require('../schemas/supplySchema');
-const fs = require('fs');
-const path = require('path');
+const multer = require('multer');
+const upload = multer();
 
 // controller for getting all supplies
 exports.getAllSupplies = async (req, res) => {
@@ -34,12 +34,11 @@ exports.getSuppliesByCategory = async (req, res) => {
 };
 
 // controller for creating a new supply
-exports.createSupply = async (req, res) => {
+exports.createSupply = upload.single('image'), async (req, res) => {
   let imageBase64 = null;
-  if (req.body.image) {
-    // Assuming the image is a path to the image file
-    const imagePath = path.resolve(req.body.image);
-    const imageBuffer = fs.readFileSync(imagePath);
+  if (req.file) {
+    // Convert the image file to a Buffer and then to a Base64 string
+    const imageBuffer = new Buffer(req.file.buffer);
     imageBase64 = imageBuffer.toString('base64');
   }
 
