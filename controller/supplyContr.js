@@ -1,4 +1,6 @@
 const Supply = require('../schemas/supplySchema');
+const fs = require('fs');
+const path = require('path');
 
 // controller for getting all supplies
 exports.getAllSupplies = async (req, res) => {
@@ -33,12 +35,20 @@ exports.getSuppliesByCategory = async (req, res) => {
 
 // controller for creating a new supply
 exports.createSupply = async (req, res) => {
+  let imageBase64 = null;
+  if (req.body.image) {
+    // Assuming the image is a path to the image file
+    const imagePath = path.resolve(req.body.image);
+    const imageBuffer = fs.readFileSync(imagePath);
+    imageBase64 = imageBuffer.toString('base64');
+  }
+
   const supply = new Supply({
     name: req.body.name,
     quantity: req.body.quantity,
     price: req.body.price,
     description: req.body.description,
-    image: req.body.image,
+    image: imageBase64,
     category: req.body.category,
     website: req.body.website
   });

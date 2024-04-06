@@ -334,6 +334,9 @@
             "schema": {
               "type": "object",
               "properties": {
+                "image": {
+                  "example": "any"
+                },
                 "name": {
                   "example": "any"
                 },
@@ -344,9 +347,6 @@
                   "example": "any"
                 },
                 "description": {
-                  "example": "any"
-                },
-                "image": {
                   "example": "any"
                 },
                 "category": {
