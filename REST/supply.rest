@@ -1,4 +1,4 @@
-PUT http://localhost:3000/supplies/660f1f66ba8aa50f5b559c4e
+POST http://localhost:3000/supplies
 Content-Type: application/json
 
 {

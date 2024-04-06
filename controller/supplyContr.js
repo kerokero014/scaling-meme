@@ -37,9 +37,8 @@ exports.getSuppliesByCategory = async (req, res) => {
 exports.createSupply = upload.single('image'), async (req, res) => {
   let imageBase64 = null;
   if (req.file) {
-    // Convert the image file to a Buffer and then to a Base64 string
-    const imageBuffer = new Buffer(req.file.buffer);
-    imageBase64 = imageBuffer.toString('base64');
+    // Convert the image file to a Base64 string
+    imageBase64 = req.file.buffer.toString('base64');
   }
 
   const supply = new Supply({
@@ -47,7 +46,7 @@ exports.createSupply = upload.single('image'), async (req, res) => {
     quantity: req.body.quantity,
     price: req.body.price,
     description: req.body.description,
-    image: imageBase64,
+    image: imageBase64, // Save Base64 string of the image
     category: req.body.category,
     website: req.body.website
   });
@@ -56,7 +55,7 @@ exports.createSupply = upload.single('image'), async (req, res) => {
     const savedSupply = await supply.save();
     res.status(201).json(savedSupply);
   } catch (err) {
-    res.status(500).json({ message: err });
+    res.status(500).json({ message: err.message });
   }
 };
 
