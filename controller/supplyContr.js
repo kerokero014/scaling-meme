@@ -34,24 +34,26 @@ exports.getSuppliesByCategory = async (req, res) => {
 };
 
 // controller for creating a new supply
-exports.createSupply = upload.single('image'), async (req, res) => {
-  let imageBase64 = null;
-  if (req.file) {
-    // Convert the image file to a Base64 string
-    imageBase64 = req.file.buffer.toString('base64');
-  }
-
-  const supply = new Supply({
-    name: req.body.name,
-    quantity: req.body.quantity,
-    price: req.body.price,
-    description: req.body.description,
-    image: imageBase64, // Save Base64 string of the image
-    category: req.body.category,
-    website: req.body.website
-  });
-
+exports.createSupply = async (req, res) => {
   try {
+    const { name, quantity, price, description, image, category, website } = req.body;
+
+    let imageBase64 = '';
+
+    if (image) {
+      imageBase64 = image.toString('base64');
+    }
+
+    const supply = new Supply({
+      name: name,
+      quantity: quantity,
+      price: price,
+      description: description,
+      image: imageBase64,
+      category: category,
+      website: website
+    });
+
     const savedSupply = await supply.save();
     res.status(201).json(savedSupply);
   } catch (err) {
